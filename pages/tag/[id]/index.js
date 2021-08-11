@@ -1,8 +1,7 @@
-import Head from 'next/head';
-import Playlist from '../components/Playlist';
-import TagsList from '../components/TagsList/TagsList';
+import Head from 'next/head'
+import Playlist from '../../../components/Playlist/Playlist';
 import { useRouter } from 'next/router'
-import { tags } from '../data'
+import { tags } from '../../../data'
 
 
 export default function Tag() {
@@ -20,11 +19,11 @@ export default function Tag() {
 
       <main>
         <h1 className="title">
-          Steer
+          {tag?.name}
         </h1>
         
         <>
-          <TagsList tags={ tags } />
+          {tag && <Playlist tagId={tag.id} />}
         </>
 
       </main>
